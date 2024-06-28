@@ -5,7 +5,7 @@ import {
 } from "./resolvers/instance/resolver";
 import axios, { AxiosInstance } from "axios";
 
-class Uazapi {
+export class Uazapi {
   private config: Config;
   private axiosInstance: AxiosInstance;
   public instances: InstanceResolverType;
@@ -44,9 +44,3 @@ class Uazapi {
     this.instances = new InstanceResolver(this.axiosInstance);
   }
 }
-
-const uazapi = new Uazapi();
-
-uazapi.instances.list().then((instances) => {
-  console.log(instances.map((instance) => instance.instance.owner));
-});
