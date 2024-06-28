@@ -1,4 +1,3 @@
-import { Instance } from "../../models/instance";
 import { AxiosInstance } from "axios";
 import {
   CreateInstanceParams,
