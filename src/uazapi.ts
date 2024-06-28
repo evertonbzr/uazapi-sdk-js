@@ -20,7 +20,7 @@ export class Uazapi {
       },
     });
 
-    this.loadResolvers();
+    this.instances = new InstanceResolver(this.axiosInstance);
   }
 
   private loadConfig({
@@ -38,9 +38,5 @@ export class Uazapi {
     }
 
     return { apiKey: apiKeyFound, serverUrl: serverUrlFound };
-  }
-
-  private loadResolvers() {
-    this.instances = new InstanceResolver(this.axiosInstance);
   }
 }
