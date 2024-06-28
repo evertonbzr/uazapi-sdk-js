@@ -14,8 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.7.2",
-    "uazapi-sdk-js": "github:evertonbzr/uazapi-sdk-js"
+    "axios": "^1.7.2"
   },
   "devDependencies": {
     "@types/node": "^20.14.9",
