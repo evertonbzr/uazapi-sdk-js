@@ -9,7 +9,6 @@
     "strict": true,
     "esModuleInterop": true,
     "allowImportingTsExtensions": true,
-    "noEmit": true,
     "allowJs": true,
     "checkJs": false,
     "noImplicitAny": true,
@@ -17,5 +16,16 @@
     "forceConsistentCasingInFileNames": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-  }
+    "declaration": true, // Emite arquivos de declaração (.d.ts)
+    "declarationMap": true, // Opcional: emite sourcemaps para declarações
+    "emitDeclarationOnly": true, // Opcional: emite apenas arquivos de declaração
+    "outDir": "./dist" // Diretório de saída para os arquivos compilados
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
