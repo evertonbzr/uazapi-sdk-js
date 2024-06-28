@@ -13,8 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup src",
     "build-tsc": "tsc",
-    "prepack": "tsup src",
-    "prepare": "tsup src"
+    "prepack": "tsup src"
   },
   "keywords": [],
   "author": "",
