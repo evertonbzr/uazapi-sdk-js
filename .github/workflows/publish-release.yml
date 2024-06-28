@@ -34,9 +34,6 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Build
-        run: pnpm build
-
       - name: Make Package
         run: npm pack
 
