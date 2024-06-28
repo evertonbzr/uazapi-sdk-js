@@ -1,0 +1,54 @@
+name: Publish Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions: write-all
+
+jobs:
+  publish-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetching tags
+        run: git fetch --tags -f || true
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9
+          run_install: true
+
+      - name: Make Package
+        run: npm pack
+
+      - name: Rename Pack
+        run: mv *.tgz uazapi-sdk-js.tgz
+
+      - name: Create Release
+        uses: meeDamian/github-release@2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref }}
+          commitish: ${{ github.sha }}
+          name: ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: >
+            uazapi-sdk-js.tgz
+          gzip: folders
+          allow_override: true
