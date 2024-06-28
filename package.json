@@ -1,6 +1,6 @@
 {
   "name": "uazapi-sdk-js",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "files": [
     "dist/**"
@@ -14,7 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.7.2"
+    "axios": "^1.7.2",
+    "uazapi-sdk-js": "github:evertonbzr/uazapi-sdk-js"
   },
   "devDependencies": {
     "@types/node": "^20.14.9",
